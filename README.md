@@ -1,9 +1,9 @@
 # 一个比较简单的命令行工具
 
 ```
-# 安装
+## 1、安装
     [sudo] npm install xy9524-cli -g
-# 初始化项目
+## 2、初始化项目
     okii init [name] [type]
 
     name: 你的项目名称
