@@ -13,7 +13,7 @@ const options = require('./option');
 const cmd = require('node-cmd');
 
 program
-  .version('1.1.2')
+  .version('1.1.4')
   .command('init [name] [type]')
   .action(function (name, type = "ordinary") {
     if (!fs.existsSync(name)) { // 判断当前目录下有没有已经存在名为'name'的项目
