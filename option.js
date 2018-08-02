@@ -29,5 +29,6 @@ let vueOptions = [
 ];
 
 module.exports = {
-  vueOptions: baseOptions.concat(vueOptions)
+  vueOptions: baseOptions.concat(vueOptions),
+  ordinaryOptions: baseOptions
 };

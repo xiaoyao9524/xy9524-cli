@@ -15,11 +15,13 @@ const cmd = require('node-cmd');
 program
   .version('1.1.2')
   .command('init [name] [type]')
-  .action(function (name, type = "vue") {
+  .action(function (name, type = "ordinary") {
     if (!fs.existsSync(name)) { // 判断当前目录下有没有已经存在名为'name'的项目
       let option = null;
       if (type === 'vue') {
         option = options.vueOptions;
+      } else if (type === 'ordinary') {
+        option = options.ordinaryOptions;
       }
       // 说明不存在，开始创建
       inrqirer.prompt(option)
@@ -35,6 +37,8 @@ program
               // vue-template
               address = 'github:xiaoyao9524/webpack-devtool#vue-template';
             }
+          } else if (type === 'ordinary') {
+            address = 'github:xiaoyao9524/webpack-devtool#ordinary';
           }
           const spinner = ora({
             text: '正在下载模板...',
