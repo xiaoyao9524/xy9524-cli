@@ -8,5 +8,5 @@
 
     name: 你的项目名称
     type: 下载的模板类型
-        'ordinary'(默认)      普通无框架模板
-        'vue'                    vue模板
+        ordinary(默认)      普通无框架模板
+        vue                 vue模板
