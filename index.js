@@ -13,7 +13,7 @@ const options = require('./option');
 const cmd = require('node-cmd');
 
 program
-    .version('1.1.6')
+    .version('1.2.0')
     .command('init [name] [type]')
     .action(function (name, type = "ordinary") {
       if (!name) {
@@ -97,7 +97,7 @@ program
                   log(logSysbols.success, chalk.green(`请继续：`));
                   log(logSysbols.info, chalk.green(`1、'cd ${name}'.`));
                   log(logSysbols.info, chalk.green(`2、'${manner} install'.`));
-                  log(logSysbols.info, chalk.green(`2、'${manner} run dev'.`));
+                  log(logSysbols.info, chalk.green(`3、'${manner} run dev'.`));
                 }
               })
             })
