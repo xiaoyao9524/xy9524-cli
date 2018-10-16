@@ -16,10 +16,17 @@ let baseOptions = [
     name: 'description',
     message: '请输入项目描述',
     default: ''
+  },
+  {
+    type: 'confirm',
+    name: 'autoInstall',
+    message: '是否自动下载依赖?',
+    default: true
   }
 ];
 
 let vueOptions = [
+    ...baseOptions,
   {
     type: 'confirm',
     name: 'router',
@@ -29,6 +36,6 @@ let vueOptions = [
 ];
 
 module.exports = {
-  vueOptions: baseOptions.concat(vueOptions),
+  vueOptions: vueOptions,
   ordinaryOptions: baseOptions
 };
