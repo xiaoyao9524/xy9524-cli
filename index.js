@@ -13,9 +13,9 @@ const options = require('./option');
 const cmd = require('node-cmd');
 
 program
-    .version('1.2.0')
+    .version('1.2.1')
     .command('init [name] [type]')
-    .action(function (name, type = "ordinary") {
+    .action(function (name, type = "normal") {
       if (!name) {
         log('请输入项目名称！');
         return;
@@ -25,8 +25,8 @@ program
         let option = null;
         if (type === 'vue') {
           option = options.vueOptions;
-        } else if (type === 'ordinary') {
-          option = options.ordinaryOptions;
+        } else if (type === 'normal') {
+          option = options.normalOptions;
         }
 
         inrqirer.prompt(option)
@@ -41,7 +41,7 @@ program
                   // vue-template
                   address = 'github:xiaoyao9524/webpack-devtool#vue-template';
                 }
-              } else if (type === 'ordinary') {
+              } else if (type === 'normal') {
                 address = 'github:xiaoyao9524/webpack-devtool';
               }
               // 下载模板
@@ -55,6 +55,7 @@ program
               }, function (err) {
                 if (err) {
                   log(logSysbols.error, chalk.red('模板下载失败！'));
+                  return;
                 }
                 // 修改package.json的相关选项
                 const meta = {

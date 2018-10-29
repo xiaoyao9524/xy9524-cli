@@ -1,4 +1,4 @@
-let baseOptions = [
+let normalOptions = [
   {
     type: 'confirm',
     name: 'yarn',
@@ -26,7 +26,7 @@ let baseOptions = [
 ];
 
 let vueOptions = [
-    ...baseOptions,
+    ...normalOptions,
   {
     type: 'confirm',
     name: 'router',
@@ -37,5 +37,5 @@ let vueOptions = [
 
 module.exports = {
   vueOptions: vueOptions,
-  ordinaryOptions: baseOptions
+  normalOptions
 };
