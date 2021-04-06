@@ -6,18 +6,19 @@ const inrqirer = require('inquirer');
 const download = require('download-git-repo');
 const ora = require('ora');
 const handlebars = require('handlebars');
-const options = require('./option');
+const questions = require('./questions');
 const cmd = require('node-cmd');
 
 
-function action (name) {
+async function action (name) {
   // 判断当前目录下有没有已经存在名为'name'的项目
   if (fs.existsSync(name)) {
     // 说明已经存在，抛出错误信息
     return log(logSysbols.error, chalk.red('创建失败，项目已存在！'));
   }
 
-  const options = getProjectOptionResult();
+  const options = await inrqirer.prompt(questions);
+  console.log('ops: ', options);
 
   // let option = null;
   // if (type === 'vue') {
@@ -104,10 +105,8 @@ function action (name) {
     })
 }
 
-function getProjectOptionResult (templateType) {
-  return new Promise((res, rej) => {
-
-  })
+function getProjectOptionResult () {
+  return inrqirer.prompt(questions);
   let option = null;
   if (type === 'vue') {
     option = options.vueOptions;
